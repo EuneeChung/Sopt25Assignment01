@@ -20,7 +20,7 @@ class SignInActivity : AppCompatActivity() {
 
         //TODO 로그인 하기
         btnSignInSignUp?.setOnClickListener(
-        //if you are user new, go to sign up page
+            //if you are user new, go to sign up page
             object : View.OnClickListener{
                 override fun onClick(p0: View?) {
                     // 버튼.setOnClickListener 이렇게 하는 코드의 실질적인 내부 구현
@@ -28,7 +28,7 @@ class SignInActivity : AppCompatActivity() {
                     val intent= Intent(this@SignInActivity,SignUpActivity::class.java)
                     startActivityForResult(intent,REQUEST_CODE_LOGIN_ACTIVITY)
                 }
-        })
+            })
         btnSignIn?.setOnClickListener {
             val id= edtSignInID?.text.toString()
             val pw = edtSignInPw.text.toString()
@@ -37,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
                 //ID 또는 PW가 비워져있다면 toast로 사용자에게 알려준다
                 Toast.makeText(this,"아이디나 비밀번호를 입력해주세요",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-                }
+            }
             // 로그인 요청하기 //
             // 회원가입 정보에 있나 확인하기 있으면-> request true
             if(requestSignIn(id,pw)==true){
@@ -52,11 +52,11 @@ class SignInActivity : AppCompatActivity() {
                 edtSignInID?.requestFocus()
             }
 
+        }
+
+
+
     }
-
-
-
-}
     private fun requestSignIn(id: String, pw:String): Boolean{
         // 회원가입 정보에 있나 확인하기 있으면-> request true
         val list=SharedPreferenceController.getSignUpINfo(this)

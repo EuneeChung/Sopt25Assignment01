@@ -44,7 +44,6 @@ class SignInActivity : AppCompatActivity() {
                 val signInIntent = Intent(this, FollowerActivity::class.java)
                 // 로그인에 성공한 아이디를 넘겨주자.
                 signInIntent.putExtra("login", id)
-
                 startActivity(signInIntent)
             }
             else{

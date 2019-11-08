@@ -20,15 +20,16 @@ object SharedPreferenceController {
         //PW 설정
         editor.putString("PW",signUpUserInfo[3])
         //적용하자
-        editor.apply()
+        //editor.apply()
+        editor.commit()
     }
 
     fun getSignUpINfo(ctx: Context):List<String>{
         val preference:SharedPreferences=ctx.getSharedPreferences("UserInfo",Context.MODE_PRIVATE)
         var list = mutableListOf<String>("","")
 
-        list[0]!=preference.getString("ID","")
-        list[1]!=preference.getString("PW","")
+        list[0]=preference.getString("ID","")!!
+        list[1]=preference.getString("PW","")!!
 
         return list
     }

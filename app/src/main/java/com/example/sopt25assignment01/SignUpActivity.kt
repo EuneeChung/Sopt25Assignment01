@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
@@ -38,11 +39,15 @@ class SignUpActivity : AppCompatActivity() {
             //데베에 저장
             SharedPreferenceController.setSignUp(this,setUser)
             //로그인 으로 넘어가자
+            val list=SharedPreferenceController.getSignUpINfo(this)
+            Log.e("user",list[0])
+            Log.e("user",list[1])
 
             val intent =Intent()
             intent.putExtra("ID",setUser[2])
             intent.putExtra("PW",setUser[3])
             setResult(Activity.RESULT_OK,intent)
+
 
             finish()
         }

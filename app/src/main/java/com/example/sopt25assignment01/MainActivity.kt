@@ -11,6 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val fragment1=DummyFragment()
+        fragment1.name="frag1"
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.container_some,fragment1)
+
+        transaction.commit()
+
+
         button.setOnClickListener {
             val intent = Intent(this,SignInActivity::class.java)
             startActivity(intent)

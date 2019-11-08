@@ -41,7 +41,7 @@ class SignInActivity : AppCompatActivity() {
             // 로그인 요청하기 //
             // 회원가입 정보에 있나 확인하기 있으면-> request true
             if(requestSignIn(id,pw)==true){
-                val signInIntent = Intent(this, MainActivity::class.java)
+                val signInIntent = Intent(this, FollowerActivity::class.java)
                 // 로그인에 성공한 아이디를 넘겨주자.
                 signInIntent.putExtra("login", id)
 
@@ -60,13 +60,13 @@ class SignInActivity : AppCompatActivity() {
     private fun requestSignIn(id: String, pw:String): Boolean{
         // 회원가입 정보에 있나 확인하기 있으면-> request true
         val list=SharedPreferenceController.getSignUpINfo(this)
-        if (id==list[2]){
+        if (id==list[0]){
             //SharedPreferences에 임시로 회원가입한 데이터 저장있으면 true
-            pw==list[3]
+            pw==list[1]
             return true
         }
         else {
-            //아니면 false
+            //아니면 false1
             Toast.makeText(this, "아이디나 비밀번호가 일치하지 않습니다. 다시 입력해주세요", Toast.LENGTH_SHORT).show()
             return false
         }

@@ -1,4 +1,4 @@
-package com.example.sopt25assignment01
+package com.example.sopt25assignment01.SignIn_Up
 
 import android.app.Activity
 import android.content.Intent
@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.sopt25assignment01.FollowerActivity
+import com.example.sopt25assignment01.R
+import com.example.sopt25assignment01.DB.SharedPreferenceController
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
@@ -25,7 +28,8 @@ class SignInActivity : AppCompatActivity() {
                 override fun onClick(p0: View?) {
                     // 버튼.setOnClickListener 이렇게 하는 코드의 실질적인 내부 구현
                     // 파라미터는 클린 view의 참조 (https://developer.android.com/reference/android/view/View.OnClickListener)
-                    val intent= Intent(this@SignInActivity,SignUpActivity::class.java)
+                    val intent= Intent(this@SignInActivity,
+                        SignUpActivity::class.java)
                     startActivityForResult(intent,REQUEST_CODE_LOGIN_ACTIVITY)
                 }
             })
@@ -52,13 +56,17 @@ class SignInActivity : AppCompatActivity() {
             }
 
         }
+        btnBack.setOnClickListener{
+
+            finish()
+        }
 
 
 
     }
     private fun requestSignIn(id: String, pw:String): Boolean{
         // 회원가입 정보에 있나 확인하기 있으면-> request true
-        val list=SharedPreferenceController.getSignUpINfo(this)
+        val list= SharedPreferenceController.getSignUpINfo(this)
         if (id==list[0]){
             //SharedPreferences에 임시로 회원가입한 데이터 저장있으면 true
             pw==list[1]

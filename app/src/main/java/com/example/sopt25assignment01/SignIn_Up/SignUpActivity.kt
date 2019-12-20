@@ -1,4 +1,4 @@
-package com.example.sopt25assignment01
+package com.example.sopt25assignment01.SignIn_Up
 
 import android.app.Activity
 import android.content.Intent
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.sopt25assignment01.R
+import com.example.sopt25assignment01.DB.SharedPreferenceController
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 
@@ -37,9 +39,9 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             //데베에 저장
-            SharedPreferenceController.setSignUp(this,setUser)
+            SharedPreferenceController.setSignUp(this, setUser)
             //로그인 으로 넘어가자
-            val list=SharedPreferenceController.getSignUpINfo(this)
+            val list= SharedPreferenceController.getSignUpINfo(this)
             Log.e("user",list[0])
             Log.e("user",list[1])
 

@@ -1,4 +1,4 @@
-package com.example.sopt25assignment01
+package com.example.sopt25assignment01.DB
 
 import android.content.Context
 import android.content.SharedPreferences

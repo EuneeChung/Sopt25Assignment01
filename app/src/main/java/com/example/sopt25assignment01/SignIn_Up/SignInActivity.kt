@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.sopt25assignment01.FollowerActivity
+import com.example.sopt25assignment01.Follower.FollowerActivity
 import com.example.sopt25assignment01.R
 import com.example.sopt25assignment01.DB.SharedPreferenceController
 import kotlinx.android.synthetic.main.activity_sign_in.*

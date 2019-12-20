@@ -1,7 +1,9 @@
-package com.example.sopt25assignment01
+package com.example.sopt25assignment01.Follower
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sopt25assignment01.MyProfileFragment
+import com.example.sopt25assignment01.R
 
 class FollowerActivity : AppCompatActivity() {
 
@@ -9,11 +11,8 @@ class FollowerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_follower)
 
-        val myProfileFragment=MyProfileFragment()
+        val myProfileFragment= MyProfileFragment()
 
 
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.container_profile,myProfileFragment)
-        transaction.commit()
     }
 }
